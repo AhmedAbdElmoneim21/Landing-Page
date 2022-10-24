@@ -1,8 +1,8 @@
 # Landing Page Project
 
-## Description
-responsive landing page project by udacity
+## Table of Contents
 
+* [Instructions](#instructions)
 
 ## Instructions
 
