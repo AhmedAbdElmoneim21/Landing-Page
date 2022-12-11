@@ -1,6 +1,7 @@
 # Landing Page Project
 
-## Table of Contents
+## This is the first project for Udacity Front End Developer Nanodegree
+
 
 * [Instructions](#instructions)
 
