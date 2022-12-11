@@ -1,11 +1,9 @@
-//Here I have called all the variables that I will use to build the landing page
-const navList = document.getElementById("navbar__list");
+const navList = document.getElementById("navbar__list"); // assuming ul exists
 const documentFragment = document.createDocumentFragment();
 const allSection = document.querySelectorAll("section");
 const navMenu = document.getElementsByClassName("navbar__menu");
 const btn = document.getElementById("btn-section");
 //################################################//
-//make function called all to create navigation dynamic with js
 function all() {
   navList.innerHTML = "";
   allSection.forEach((section) => {
@@ -19,39 +17,39 @@ function all() {
 }
 all();
 //################################################//
-//make function to scroll in window to change background-color and make highlight in nav on the section is appear in window
+const activeHead = document.querySelectorAll("h2");
 function scroll() {
-  const act_nav = document.querySelectorAll(".menu__link");
   window.onscroll = () => {
-    allSection.forEach((bkDiv, element) => {
+    allSection.forEach((bkDiv, head) => {
       if (
         bkDiv.getBoundingClientRect().top >= -500 &&
         bkDiv.getBoundingClientRect().top <= 200
       ) {
         bkDiv.classList.add("your-active-class");
-        act_nav[element].classList.add("act-nav");
       } else {
         bkDiv.classList.remove("your-active-class");
-        act_nav[element].classList.remove("act-nav");
       }
     });
   };
 }
 scroll();
+// function Hscroll() {
+//   window.onscroll = () => {
+//     activeHead.forEach((head) => {
+//       if (
+//         head.getBoundingClientRect().top >= -500 &&
+//         head.getBoundingClientRect().top <= 200
+//       ) {
+//         head.classList.add("active");
+//       } else {
+//         head.classList.remove("active");
+//       }
+//     });
+//   };
+// }
+// Hscroll();
 
 //########################################################\\
-//make arrow Function to make the page scroll is smooth when press a li in nav
-const Smooth = (li, section) => {
-  li.addEventListener("click", (ele) => {
-    ele.preventDefault();
-    window.scrollTo({
-      top: section.offsetTop,
-      behavior: "smooth",
-    });
-  });
-};
-//########################################################\\
-//make function to responsive navigation
 const icon = document.querySelector("#icon");
 icon.addEventListener("click", () => {
   navList.classList.toggle("active");
